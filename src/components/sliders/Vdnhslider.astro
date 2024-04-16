@@ -1,0 +1,136 @@
+---
+import { Picture } from '@astrojs/image/components'
+const pics = [
+    {
+        pic: '/img/newpic/vdnh/1.jpg'
+    },
+    {
+        pic: '/img/newpic/vdnh/2.jpg'
+    },
+    {
+        pic: '/img/newpic/vdnh/3.jpg'
+    },
+]
+---
+
+
+<style lang="scss">
+    .swiper {
+
+        img {
+            width: 100%;
+        }
+    }
+
+
+    .glassEffectSliderTitle {
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+
+    backdrop-filter: blur(17px);
+    -webkit-backdrop-filter: blur(17px);
+    }
+</style>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10.0.4/swiper-bundle.min.css">
+
+
+
+
+
+
+
+<div class="my-10 sm:my-20 container mx-auto glassEffectSliderTitle p-4">
+  
+
+    <div class="flex flex-col text-center w-full mb-5 ">
+        <div>
+            <h4 class="sm:text-4xl inline-block text-3xl font-medium title-font mb-2 text-gray-200  py-5 px-10">Фотогаллерея клуба</h4>
+        </div>
+    </div>
+    
+
+
+
+    <div class="swiper">
+
+        <div class="swiper-wrapper">
+         
+          
+        {
+            pics && pics.map(item => (
+
+            <div class="swiper-slide">
+
+                <Picture
+                    src={item.pic}
+                    format="webp"
+                    widths={[360, 375, 425, 480, 768, 1513]}
+                    aspectRatio="16 : 9"
+                    alt="club"
+                    class="rounded-xl"
+                />
+
+            </div>
+            ))
+        }
+        
+        </div>
+
+        <div class="swiper-pagination"></div>
+      
+      
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      
+        
+        <div class="swiper-scrollbar" ></div>
+      </div>
+</div>
+
+
+
+
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script> -->
+
+<script type="module">
+    import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.mjs'
+  
+    const swiper = new Swiper('.swiper', {
+        
+        // direction: 'horisontal',
+        loop: true,
+
+        slidesPerView: 1,
+
+        breakpoints: {
+            640: {
+                slidesPerView: 1,
+            },
+            1024: {
+                slidesPerView: 1,
+            },
+        },
+
+    
+
+        pagination: {
+        el: '.swiper-pagination',
+        },
+    
+
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    
+
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+    });
+  </script>

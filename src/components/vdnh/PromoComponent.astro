@@ -1,0 +1,36 @@
+---
+import Promo from "./Promo.jsx";
+interface VdnhPromo {
+  title: string;
+} 
+ 
+const query = {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    query: `
+      {
+        vdnhPromos {
+            id
+            title
+            descr
+            pic {
+                url
+            }
+        }
+      }`,
+  }),
+};
+
+const response = await fetch(import.meta.env.HYGRAPH_ENDPOINT, query);
+const json = await response.json();
+const vdnhPromos: VdnhPromo[] = json.data.vdnhPromos;
+---
+
+<Promo client:visible vdnhPromos={vdnhPromos} />
+
+
+
+
+
+

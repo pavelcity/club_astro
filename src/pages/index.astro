@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Utp2 from "../components/Utp2.astro";
+import SliderNews2 from "../components/react/SliderNews2.jsx";
+---
+
+<style lang="scss">
+
+</style>
+
+
+
+<Layout
+  title="example"
+  description="example"
+  keys="example"
+  ogtype="website"
+  ogimage="/img/ogg/main.jpg"
+  ogurl="/"
+>
+
+  <Utp2 />
+  <SliderNews2 client:load />
+
+</Layout>

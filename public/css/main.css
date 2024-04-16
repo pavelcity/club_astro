@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'HeadlinerNo.45';
+    src: url('/fonts/HeadlinerNo45CYR.woff2') format('woff2'),
+         url('/fonts/HeadlinerNo45CYR.woff') format('woff');
+    /* другие форматы, если есть */
+    font-weight: normal;
+    font-style: normal;
+  }
+
+
+
+
+

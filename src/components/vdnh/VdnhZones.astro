@@ -1,0 +1,73 @@
+---
+import { Icon } from 'astro-icon' 
+import VdnhZondes from '../react/vdnh/VdnhZones.jsx';
+
+interface VdnhZones {
+  title: string;
+}
+ 
+const query = {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    query: `
+      {
+        vdhnZones {
+            id
+            title
+            pic {
+              id
+              url
+            }
+            countPc
+            oneTitle
+            oneText
+            twoTitle
+            twoText
+            triTitle
+            triText
+            fourTitle
+            fourText
+            fiveTitle
+            fiveText
+            sixTitle
+            sixText
+            sevenTitle
+            sevenText
+            pnchtTime
+            pnchtPrice
+            pnchtTimeTwo
+            pnchtPriceTwo
+            pnchtTimeTri
+            pnchtPriceTri
+            pnchtTimeFour
+            pnchtPriceFour
+            pnchtTimeFive
+            pnchtPriceFive
+            pnchtTimeSix
+            pnchtPriceSix
+            ptvsTime
+            ptvsPrice
+            ptvsTimeTwo
+            ptvsPriceTwo
+            ptvsTimeTri
+            ptvsPriceTri
+            ptvsTimeFour
+            ptvsPriceFour
+            ptvsTimeFive
+            ptvsPriceFive
+            ptvsTimeSix
+            ptvsPriceSix
+        }
+      }`,
+  }),
+};
+
+const response = await fetch(import.meta.env.HYGRAPH_ENDPOINT, query);
+const json = await response.json();
+const vdhnZones: VdnhZones[] = json.data.vdhnZones;
+
+--- 
+       
+           
+<VdnhZondes client:only="react"  vdhnZones={vdhnZones} /> 

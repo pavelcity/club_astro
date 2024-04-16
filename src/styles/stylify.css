@@ -1,0 +1,99 @@
+.align-items\:center{
+	align-items: center
+}
+.appearance\:none{
+	appearance: none
+}
+.background\:\#aaa{
+	background: #aaa
+}
+.\[\&\:checked\]\{box-shadow\:24px_0_0_2px_\#fff_inset\,_0px_0_0px_2px_\#fff_inset\,0_0\;border-color\:\$color\;background\:\$color\}:checked{
+	background: var(--color)
+}
+.\[\&\:checked\]\{box-shadow\:24px_0_0_2px_\$color_inset\,_0px_0_0px_2px_\$color_inset\,0_0\;border-color\:\$color\;background\:\#fff\}:checked{
+	background: #fff
+}
+.border\:1px_solid_\#aaa{
+	border: 1px solid #aaa
+}
+.\[\&\:checked\]\{box-shadow\:24px_0_0_2px_\#fff_inset\,_0px_0_0px_2px_\#fff_inset\,0_0\;border-color\:\$color\;background\:\$color\}:checked,
+.\[\&\:checked\]\{box-shadow\:24px_0_0_2px_\$color_inset\,_0px_0_0px_2px_\$color_inset\,0_0\;border-color\:\$color\;background\:\#fff\}:checked{
+	border-color: var(--color)
+}
+.border-radius\:24px{
+	border-radius: 24px
+}
+.box-shadow\:-24px_0_0_2px_\#fff_inset\,_0px_0_0px_2px_\#fff_inset\,0_0{
+	box-shadow: -24px 0 0 2px #fff inset, 0px 0 0px 2px #fff inset,0 0
+}
+.\[\&\:checked\]\{box-shadow\:24px_0_0_2px_\#fff_inset\,_0px_0_0px_2px_\#fff_inset\,0_0\;border-color\:\$color\;background\:\$color\}:checked{
+	box-shadow: 24px 0 0 2px #fff inset, 0px 0 0px 2px #fff inset,0 0
+}
+.\[\&\:checked\]\{box-shadow\:24px_0_0_2px_\$color_inset\,_0px_0_0px_2px_\$color_inset\,0_0\;border-color\:\$color\;background\:\#fff\}:checked{
+	box-shadow: 24px 0 0 2px var(--color) inset, 0px 0 0px 2px var(--color) inset,0 0
+}
+.\[li\:before\]\{content\:\^\✅\^\;position\:absolute\;left\:0\} li:before{
+	content: '✅'
+}
+.\[li\:nth-child\(odd\)\:before\]\{content\:\^\�\�\^\} li:nth-child(odd):before{
+	content: '🍎'
+}
+.\[li\:nth-child\(even\)\:before\]\{content\:\^\�\�\^\} li:nth-child(even):before{
+	content: '🥑'
+}
+.\[li\.pros\:before\]\{content\:\^\�\�\^\} li.pros:before{
+	content: '👍'
+}
+.\[li\.cons\:before\]\{content\:\^\�\�\^\} li.cons:before{
+	content: '👎'
+}
+.display\:inline-flex{
+	display: inline-flex
+}
+.flex-wrap\:nowrap{
+	flex-wrap: nowrap
+}
+.height\:24px{
+	height: 24px
+}
+.\[li\:before\]\{content\:\^\✅\^\;position\:absolute\;left\:0\} li:before,
+.\[li\:before\]\{position\:absolute\;left\:0\} li:before{
+	left: 0
+}
+.\[li\]\{padding-left\:28px\;margin-bottom\:4px\;position\:relative\;list-style\:none\} li{
+	list-style: none
+}
+.\[li\:last-of-type\]\{margin-bottom\:0\} li:last-of-type{
+	margin-bottom: 0
+}
+.\[li\]\{padding-left\:28px\;margin-bottom\:4px\;position\:relative\;list-style\:none\} li{
+	margin-bottom: 4px
+}
+.margin-right\:4px{
+	margin-right: 4px
+}
+.overflow\:hidden{
+	overflow: hidden
+}
+.padding-left\:0{
+	padding-left: 0
+}
+.\[li\]\{padding-left\:28px\;margin-bottom\:4px\;position\:relative\;list-style\:none\} li{
+	padding-left: 28px
+}
+.\[li\:before\]\{content\:\^\✅\^\;position\:absolute\;left\:0\} li:before,
+.\[li\:before\]\{position\:absolute\;left\:0\} li:before{
+	position: absolute
+}
+.\[li\]\{padding-left\:28px\;margin-bottom\:4px\;position\:relative\;list-style\:none\} li{
+	position: relative
+}
+.transition\:\.2s_ease-in-out\,\.2s_ease-in-out{
+	transition: .2s ease-in-out,.2s ease-in-out
+}
+.width\:48px{
+	width: 48px
+}
+.will-change\:box-shadow\,border-color{
+	will-change: box-shadow,border-color
+}

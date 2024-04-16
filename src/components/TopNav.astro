@@ -1,0 +1,610 @@
+---
+import { Icon } from 'astro-icon' 
+---
+
+<style lang="scss">
+
+
+.glassEffectTopNav {
+      box-sizing: border-box;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 0px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(17px);
+        -webkit-backdrop-filter: blur(17px);
+        // border: 1px solid rgba(255, 255, 255, 0.5); 
+  }
+
+
+
+  // .active { color: #B4C6FC !important; }
+  .activeTopMenu { color: #B4C6FC !important; }
+  
+
+  .mobileActive { 
+    color: #38bdf8;
+    font-weight: 500;
+    background-color:  #0f172a !important;
+  }
+
+
+  .headerTopNav {
+    // background-color: #020617;
+    // position: sticky ;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 100;
+    // display: none;
+ 
+    @media (max-width: 940px) {
+        display: block;
+      }
+
+    .wrapTopNav {
+        // border: 1px solid #60a5fa;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+
+        @media (max-width: 1024px) {
+          padding: 10px 15px;
+        }
+
+        
+       
+
+
+  
+        .topLogo {
+
+          span {
+            display: none;
+            // font-size: 26px;
+            font-size: 50px;
+            // font-family: 'VT323', monospace;
+            // font-family: 'Tilt Prism', cursive;
+            font-family: 'HeadlinerNo.45';
+            letter-spacing: 2px;
+            
+
+            @media (max-width: 1920px) {
+                // font-size: 20px;
+                font-size: 35px;
+              }
+
+              @media (max-width: 768px) {
+                display: block;
+              }
+
+              @media (max-width: 480px) {
+                // font-size: 18px;
+                font-size: 30px;
+              }
+          }
+
+          
+
+            @media (max-width: 1280px) {
+              margin-right: 20px;
+            }
+
+            img {
+              width: 50px;
+              padding: 1px;
+
+              @media (max-width: 1024px) {
+                width: 40px;
+              }
+            }
+          }
+
+ 
+
+          .topMenu {
+
+            a {
+              font-family: 'HeadlinerNo.45';
+              letter-spacing: 2px;
+              font-size: 33px;
+              font-weight: 500;
+              // background-color: #0f172a;
+              padding: 2px 8px;
+              border-radius: 4px;
+              color:#0f172a;
+              transition: ease .3s;
+
+              &:hover {
+                color:#B4C6FC;
+              }
+ 
+              &.active {
+                color:#B4C6FC !important;
+              }
+
+              @media (max-width: 1920px) {
+                font-size: 22px;
+                // font-weight: 500;
+              }
+
+              @media (max-width: 1513px) {
+                font-size: 20px;
+              }
+            }
+
+            @media (max-width: 1280px) {
+              display: none;
+            }
+          }
+
+
+          .phoneNav {
+            display: flex;
+            align-items: center;
+
+
+
+
+            .topPhone {
+              // border: 1px solid #334155;
+              outline: none;
+              color: #fff;
+              cursor: pointer;
+              position: relative;
+              z-index: 0;
+              border-radius: 10px;
+              padding: 10px 25px;
+
+                @media (max-width: 767px) {
+                  padding: 10px 15px;
+                }
+
+              span {
+                  @media (max-width: 767px) {
+                    display: none;
+                  }
+              }
+
+            }
+
+            .topPhone:before {
+                  content: '';
+                  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+                  position: absolute;
+                  top: -2px;
+                  left:-2px;
+                  background-size: 400%;
+                  z-index: -1;
+                  filter: blur(5px);
+                  width: calc(100% + 4px);
+                  height: calc(100% + 4px);
+                  animation: glowing 20s linear infinite;
+                  opacity: 0;
+                  transition: opacity .3s ease-in-out;
+                  border-radius: 10px;
+              }
+
+              .topPhone.active {
+                  color: #000
+              }
+
+              .topPhone:active:after {
+                  background: transparent;
+              }
+
+
+              .topPhone:before {
+                  opacity: 1;
+              }
+
+              .topPhone:after {
+                  z-index: -1;
+                  content: '';
+                  position: absolute;
+                  width: 100%;
+                  height: 100%;
+                  // background: #111;
+                  left: 0;
+                  top: 0;
+                  border-radius: 10px;
+              }
+
+              @keyframes glowing {
+                  0% { background-position: 0 0; }
+                  50% { background-position: 400% 0; }
+                  100% { background-position: 0 0; }
+              }
+
+
+
+              
+
+
+
+
+
+
+              .humb {
+                margin-left: 25px;
+                display: none;
+
+                @media (max-width: 1280px) {
+                  display: block;
+                }
+
+                @media (max-width: 320px) {
+                  margin-left: 10px;
+                }
+              }
+          }
+
+
+      }
+      
+  }
+
+
+
+
+
+  .mobileMenuWrapActive {
+    transform: translateX(0%) !important;
+    transition: ease .2s !important;
+    visibility: visible !important;
+    display: block !important;
+  }
+
+
+  //mobileMenuWrap
+  .mobileMenuWrap {
+    // border: 1px solid red!important;
+    display: none;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-sizing:border-box;
+    
+    z-index: 105;
+    width: 100%;
+    height: 100vh;
+    // background-color: #020617;
+    background-color: #0f172a;
+    color:#fff;
+
+     transform: translateX(-100%);
+    //  transform: translateX(0%);
+     transition: ease .3s;
+
+
+     @media only screen and (max-width: 768px) {
+      display: block;
+     }
+
+    .insideMobileMenu {
+      padding: 60px 20px 10px 20px;
+      position: relative;
+
+      .closeMobileBt {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+
+      .mobileLogo {
+        display: flex;
+        align-items: center;
+        // justify-content: center;
+        margin-top: 5px;
+        margin-bottom: 20px;
+        // background-color: #eee;
+
+        img {
+          width: 40px;
+        }
+
+        span {
+          // font-size: 26px;
+          font-size: 30px;
+          // font-family: 'VT323', monospace;
+          font-family: 'HeadlinerNo.45';
+          
+
+          @media only screen and (max-width: 1920px) {
+              // font-size: 20px;
+              font-size: 27px;
+            }
+
+            @media only screen and (max-width: 480px) {
+              // font-size: 18px;
+              font-size: 26px;
+            }
+        }
+
+
+
+          @media (max-width: 1280px) {
+            margin-right: 20px;
+          }
+
+          img {
+            width: 50px;
+            padding: 1px;
+
+            @media (max-width: 1024px) {
+              width: 40px;
+            }
+          }
+      }
+
+
+      .menuListLeftNav {
+        height: 100vh;
+        // overflow: hidden;
+        overflow-y: auto;
+
+        li {
+          margin-bottom: 10px;
+
+          a {
+            // background-color: #334155;
+            background-color: #020617;
+            display: block;
+            padding: 10px;
+            text-transform: uppercase;
+            font-weight: 400;
+            font-size: 14px;
+            border-radius: 6px;
+          }
+
+          a.leftPhone {
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            font-weight: 500;
+            background-color: #8b5cf6;
+
+            svg {
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+    }
+
+
+  }
+
+
+
+
+
+  
+
+  .newTopNav {
+    // position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 10px 0;
+
+    // display: flex;
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+
+    // .active {
+    //   background-color:#8b5cf6;
+    //   margin-right:15px;
+    // }
+
+    @media (max-width: 940px) {
+        display: none;
+      }
+
+
+
+    .leftMenu {
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+
+    .rightMenu {
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+     
+
+    nav {
+
+      a {
+        color:#e2e8f0;
+        font-size: 16px;
+        background-color: #0f172a;
+        text-transform: uppercase;
+        font-weight: 600;
+        padding: 10px 20px;
+        border-radius: 6px;
+        margin-right:15px;
+
+
+        @media (max-width: 1920px) {
+          font-size: 14px;
+        }
+      }
+
+      a:last-child {
+          margin-right:0px;
+        }
+
+    } 
+ 
+    .topLogo {
+
+        span {
+          // font-size: 26px;
+          font-size: 40px;
+          // font-family: 'VT323', monospace;
+          font-family: 'HeadlinerNo.45';
+          
+
+          @media (max-width: 1920px) {
+              // font-size: 20px;
+              font-size: 27px;
+            }
+
+            @media (max-width: 480px) {
+              // font-size: 18px;
+              font-size: 35px;
+            }
+        }
+
+
+
+          @media (max-width: 1280px) {
+            margin-right: 20px;
+          }
+
+          img {
+            width: 50px;
+            padding: 1px;
+
+            @media (max-width: 1024px) {
+              width: 40px;
+            }
+          }
+        }
+
+  }
+
+
+  
+
+</style>
+
+
+
+ 
+
+    
+
+ 
+
+<header class="text-gray-200 body-font headerTopNav glassEffectTopNav ">
+  <div class="wrapTopNav container mx-auto  ">
+
+    <a href="/" class="topLogo flex title-font font-light items-center text-gray-100 hover:text-gray-200 ">
+      astro
+    </a>
+    
+ 
+    
+    <nav class="topMenu md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
+      <a href="/" class="hover:text-gray-300 active">Главная</a>
+      <a href="/clubs" class="hover:text-gray-300">Клубы</a>
+    </nav>
+
+    <div class="phoneNav">
+
+
+      <a href="#" class="humb">
+        <Icon name="mdi:menu" width="30" class="" />
+      </a>
+
+    </div>
+ 
+ 
+  </div>
+  
+  
+
+
+
+
+ 
+
+  <div class="mobileMenuWrap">
+  
+    <nav class="insideMobileMenu">
+      <Icon name="mdi:close" width="30" class="closeMobileBt" />
+
+      <a href="/" class="mobileLogo  title-font font-light text-sky-300 hover:text-sky-400 ">
+        <span class="ml-3 text-xl">astrojs site</span>
+      </a>
+
+      <ul class="menuListLeftNav">
+        <li><a href="/">Главная</a></li>
+        <li><a href="/clubs">Клубы</a></li>
+
+
+      </ul>
+
+    </div>
+  </div>
+  
+</header>
+
+
+
+
+
+
+
+
+
+
+<script>
+
+   const navLinks = document.querySelectorAll("nav a");
+
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+
+    // `slice` here to remove the first `/` in pathname
+    // const currentPath = window.location.pathname;
+    const currentPath = window.location.pathname.slice("1");
+
+    // `link.href` returns a whole url, such as: "https://somedomain.com/posts" and we only need the last part
+    const hrefArray = link.href.split("/");
+    const thisPath = hrefArray[hrefArray.length - 1];
+
+    if (currentPath === thisPath) {
+      link.classList.add("active");
+    }
+  });
+    
+  </script>
+
+
+
+<script>
+
+  //mobile menu
+  const humb = document.querySelector('.humb');
+  const mobileMenuWrapActive = document.querySelector('.mobileMenuWrapActive');
+  const mobileMenuWrap = document.querySelector('.mobileMenuWrap');
+  const closeMobileBt = document.querySelector('.closeMobileBt');
+
+  humb.addEventListener('click', function (e) {
+    e.preventDefault();
+    mobileMenuWrap.classList.toggle('mobileMenuWrapActive')
+  })
+
+  closeMobileBt.addEventListener('click', function(e) {
+    e.preventDefault()
+    mobileMenuWrap.classList.toggle('mobileMenuWrapActive')
+  })
+
+
+
+</script>
+
+
+ 
+
+

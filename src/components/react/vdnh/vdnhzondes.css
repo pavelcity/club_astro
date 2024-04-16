@@ -1,0 +1,120 @@
+
+.glassEffectInnerClub {
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+
+  backdrop-filter: blur(17px);
+  -webkit-backdrop-filter: blur(17px);
+}
+
+
+
+
+.wrapInsideZonesInfo {
+    /* border: 1px solid red; */
+    
+}
+
+
+.wrapInsideZonesInfo .timeWeekTitle {
+  font-weight: 900;
+  font-size: 25px; 
+}
+
+@media (max-width:1920px) {
+  .wrapInsideZonesInfo .timeWeekTitle {
+    font-size: 20px; 
+  }
+}
+
+
+
+
+
+.wrapInsideZonesInfo img {
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 370px;
+    object-fit: cover;
+    object-position: center; 
+}
+
+@media (max-width:1920px) {
+    .wrapInsideZonesInfo img {
+      width: 100%;
+      height: 270px;
+  }
+}
+
+  
+.wrapInsideZonesInfo .title {
+    font-size: 30px;
+    color:#7dd3fc;
+    /* border: 1px solid red; */
+  }
+
+  @media (max-width:1920px) {
+    .wrapInsideZonesInfo .title {
+      font-size: 20px;
+    }
+  }
+
+
+
+.wrapInsideZonesInfo .infoTitle {
+    font-size: 30px;
+    font-weight: 500;
+    /* border: 1px solid blue; */  
+  }
+
+  @media (max-width:1920px) {
+    .wrapInsideZonesInfo .infoTitle {
+      font-size: 16px;
+    } 
+  }
+
+
+ 
+
+
+
+.wrapInsideZonesInfo .titmeTitle {
+    font-size: 25px;
+  }
+
+  @media (max-width:1920px) {
+    .wrapInsideZonesInfo .titmeTitle {
+      font-size: 16px;
+    }
+  }
+
+
+
+.wrapInsideZonesInfo  .timePriceZones {
+    border-radius:10px; 
+    padding:25px;     
+  }
+
+  @media (max-width:1920px) {
+    .wrapInsideZonesInfo  .timePriceZones {
+      padding:15px;     
+    }
+  }
+
+  .wrapInsideZonesInfo  .timePriceZones  li {
+    font-size: 25px;
+    border-bottom: 1px solid #64748b;
+    padding-bottom: 4px;
+  }
+
+  @media (max-width:1920px) {
+
+    .wrapInsideZonesInfo  .timePriceZones  li {
+      font-size: 15px;
+    }
+  }
+
+
+ 

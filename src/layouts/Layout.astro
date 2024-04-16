@@ -1,0 +1,119 @@
+---
+import TopNav from "../components/TopNav.astro"
+import Footer from "../components/Footer.astro"
+import { Icon } from 'astro-icon'
+
+const { title, description, keys, ogimage, ogurl, ogtype } = Astro.props
+
+
+---
+
+<style lang="scss">
+	* {
+		box-sizing: border-box;
+	}
+	
+	body {
+		padding-top: 80px;
+	}	
+
+
+</style>
+ 
+ 
+  
+ 
+ 
+<html lang="ru">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="shortcut icon" href="/img/fav.png" type="image/x-icon">
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+    	<meta name="description" content={description}> 
+		<meta name="keywords" content={keys}>
+
+
+		<meta property="og:type" content={ogtype}>  
+		<meta property="og:title" content={title}>
+		<meta property="og:description" content={description}>
+		<meta property="og:image" content={ogimage}>
+		<meta property="og:url" content={ogurl}>
+
+		<link rel="sitemap" href="/sitemap-index.xml" />
+
+
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+
+
+
+		<link rel="stylesheet" href="/css/aos.css">
+		<link rel="stylesheet" href="/css/main.css">
+
+ 
+
+
+		<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.3/lottie.min.js"></script>
+		
+
+	</head>
+
+	<body class="bg-gray-700" >
+
+		
+   		<TopNav />
+			<slot />
+
+		<Footer />
+   
+
+
+
+
+	    
+
+		
+
+
+
+		<script  async>
+			const link = document.createElement('link');
+			link.rel = 'manifest';
+			link.href = '/manifest.json';
+
+			document.head.appendChild(link);
+		</script>
+
+
+
+
+
+		<script async>
+			
+			if ('serviceWorker' in navigator) {
+			window.addEventListener('load', () => {
+				navigator.serviceWorker.register('/sw/service-worker.js')
+				.then(registration => {
+					console.log('Service Worker зарегистрирован:', registration);
+				})
+				.catch(error => {
+					console.log('Ошибка при регистрации Service Worker:', error);
+				});
+			});
+			}
+
+		</script>
+
+
+		
+
+
+
+
+	</body>
+</html>

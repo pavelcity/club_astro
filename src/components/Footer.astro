@@ -1,0 +1,376 @@
+---
+import { Image } from "@astrojs/image/components";
+import { Icon } from "astro-icon";
+---
+
+<style lang="scss">
+  .active {
+    color: #d6d3d1 !important;
+  }
+
+  .footerLogo {
+    span {
+      // font-size: 26px;
+      font-size: 30px;
+      // font-family: 'VT323', monospace;
+      font-family: "HeadlinerNo.45";
+
+      @media (max-width: 1920px) {
+        // font-size: 20px;
+        font-size: 27px;
+      }
+
+      @media (max-width: 480px) {
+        // font-size: 18px;
+        font-size: 26px;
+      }
+    }
+
+    @media (max-width: 1280px) {
+      margin-right: 20px;
+    }
+
+    img {
+      width: 50px;
+      padding: 1px;
+
+      @media (max-width: 1024px) {
+        width: 40px;
+      }
+    }
+  }
+
+  .footerMobileWrap {
+    // border: 1px solid red;
+    position: fixed;
+    width: 100%;
+    // background-color: #374151;
+    background-color: #030712;
+    // height: 50px;
+    // position: sticky !important;
+    bottom: 0;
+    z-index: 10;
+    color: #f3f4f6;
+
+    display: none;
+
+    @media (max-width: 767px) {
+      display: block;
+      // position: sticky;
+      // bottom: 0;
+    }
+
+    .bottomMobileNav {
+      display: flex;
+      justify-content: space-between;
+      // align-items: stretch;
+      width: 100%;
+
+      li {
+        width: 100%;
+        // border: 1px solid green;
+
+        a {
+          display: flex;
+          flex-direction: column;
+          // justify-content: space-between;
+          align-items: center;
+          // width: 100%;
+          // border: 1px solid red;
+          // background-color: #ccc;
+          font-size: 12px;
+          font-weight: 400;
+          padding-top: 4px;
+          padding-bottom: 1px;
+          text-transform: uppercase;
+
+          svg {
+            margin-bottom: 2px;
+          }
+
+          span {
+            // border: 1px solid blue;
+          }
+
+          &.active {
+            // background-color: #030712;
+            background-color: #1f2937;
+          }
+        }
+
+        a.dots {
+          // background-color: #777;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  .dotsShownMenuActive {
+    // visibility: visible !important;
+    // opacity: 100 !important;
+    // display: block !important;
+    // bottom: 47px !important;
+    transition: ease 0.3s !important;
+    transform: translateY(0%) !important;
+  }
+
+  .dotsShownMenu {
+    // opacity: 0;
+    z-index: 100;
+    // visibility: hidden;
+    // display: none;
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    // right: 0;
+    // top: 0;
+    background-color: #030712;
+    // background-color: #111827;
+    // background-color: rgba(#fca5a5, .9);
+    padding: 15px 30px 30px 30px;
+
+    transform: translateY(100%);
+    transition: ease 0.4s;
+    // height: 50vh;
+
+    .closePart {
+      display: flex;
+      justify-content: flex-end;
+
+      align-items: center;
+      margin-bottom: 20px;
+
+      span {
+        color: #38bdf8;
+      }
+    }
+
+    .onePhone {
+      margin-bottom: 50px;
+
+      p {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+    }
+
+    .socialDotsWrap {
+      // background-color: #fff;
+      margin-bottom: 25px;
+
+      p {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+
+      ul {
+        display: flex;
+
+        li {
+          margin-right: 10px;
+
+          a {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .glassEffectFooter {
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 14px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(17px);
+    -webkit-backdrop-filter: blur(17px);
+    /* border: 1px solid rgba(255, 255, 255, 0.5); */
+  }
+
+  // .active {
+  //     color:#0ea5e9 !important;
+  //   }
+
+  .newFooter {
+    // border:1px solid red;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    .newFooterInside {
+      padding: 20px 60px;
+      color: #0f172a;
+      display: flex;
+      justify-content: space-between;
+      // align-items: start;
+      align-items: flex-start;
+
+      @media (max-width: 768px) {
+        padding: 20px 40px;
+      }
+
+      @media (max-width: 768px) {
+        display: none;
+      }
+
+      a {
+        font-size: 30px;
+        font-family: "HeadlinerNo.45";
+        letter-spacing: 2px;
+        font-weight: 500;
+
+        @media (max-width: 1920px) {
+          font-size: 20px;
+        }
+
+        @media (max-width: 1200px) {
+          font-size: 18px;
+        }
+
+        &:hover {
+          color: #d0d6f1;
+        }
+        &.acitve {
+          color: #7eec35 !important;
+        }
+      }
+
+      .pagesPart {
+        // border: 1px solid red;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        .active {
+          color: #d6d3d1 !important;
+        }
+
+        @media (max-width: 1200px) {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+
+      .clubsPart {
+        // border:1x solid blue;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        &.active {
+          color: #d6d3d1 !important;
+        }
+
+        @media (max-width: 1200px) {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+
+      .socialsPart {
+        // border: 1px solid #eee;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+
+        @media (max-width: 1200px) {
+          grid-template-columns: repeat(1, 1fr);
+        }
+
+        a {
+          display: flex;
+          align-items: center;
+
+          &:hover {
+            color: #d6d3d1;
+          }
+        }
+      }
+    }
+  }
+</style>
+
+<footer class="newFooter">
+  <div class="container mx-auto glassEffectFooter">
+    <div class="newFooterInside">
+      <nav class="pagesPart">
+        <a href="/" class="hover:text-gray-300 mr-4">Главная</a>
+        <a href="/clubs" class="hover:text-gray-300">Клубы</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+
+
+
+<nav class="footerMobileWrap">
+  <ul class="bottomMobileNav">
+    <li>
+      <a href="/">
+        <Icon name="mdi:home-variant-outline" width="22" />
+        <span>Home</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="/clubs">
+        <Icon name="mdi:gamepad-variant-outline" width="22" />
+        <span>Клубы</span>
+      </a>
+    </li>
+
+  </ul>
+</nav>
+
+<div class="dotsShownMenu">
+  <div class="closePart">
+    <span>Закрыть</span>
+    <Icon name="mdi:close" width="40" class="ml-5 text-white" />
+  </div>
+
+  <div class="onePhone">
+    <a
+      href="tel:8 800 000-00-00"
+      class="topPhone inline-flex items-center bg-gray-100 border-0 py-2 md:py-1 px-3 focus:outline-none hover:bg-gray-200 text-sky-600 rounded text-xl font-bold w-full"
+    >
+      <Icon name="ic:baseline-local-phone" width="20" class="mr-5" />
+      <span>8 800 000-00-00</span>
+    </a>
+  </div>
+
+
+</div>
+
+<script defer>
+  const closePart = document.querySelector(".closePart");
+
+  closePart.addEventListener("click", function (e) {
+    e.preventDefault();
+    dotsShownMenu.classList.toggle("dotsShownMenuActive");
+  });
+
+  const dots = document.querySelector(".dots");
+  const dotsShownMenu = document.querySelector(".dotsShownMenu");
+  const dotsShownMenuActive = document.querySelector(".dotsShownMenuActive");
+
+  dots.addEventListener("click", function (e) {
+    e.preventDefault();
+    dotsShownMenu.classList.toggle("dotsShownMenuActive");
+  });
+</script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const currentPath = window.location.pathname;
+    const navLinks2 = document.querySelectorAll("nav.clubsPart a");
+
+    navLinks2.forEach((link) => {
+      const href = link.getAttribute("href");
+
+      if (currentPath === href) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>

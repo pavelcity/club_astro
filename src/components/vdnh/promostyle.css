@@ -1,0 +1,58 @@
+.titlePromo {
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 1920px) {
+    .titlePromo {
+    font-size: 28px;
+    line-height: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .titlePromo {
+    font-size: 22px;
+    line-height: 24px;
+    margin-bottom: 10px;
+    }
+}
+
+
+
+
+
+.subTitlePromo {
+    font-size: 25px;
+    line-height: 30px;
+}
+
+@media (max-width: 1920px) {
+    .subTitlePromo {
+    font-size: 18px;
+    line-height: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .subTitlePromo {
+    font-size: 16px;
+    line-height: 18px;
+    }
+}
+
+
+
+
+.glassEffectPromoClub {
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.1);
+    
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    
+
+    backdrop-filter: blur(17px);
+    -webkit-backdrop-filter: blur(17px);
+}

@@ -1,0 +1,23 @@
+.wrapNewSlider {
+    /* border: 1px solid red; */
+}
+
+@media only screen and (max-width: 768px) {
+    .wrapNewSlider img {
+        /* border: 1px solid blueviolet !important; */
+        display: grid;
+            /* grid-template-rows: repeat(3, 1fr) !important; */
+           
+    }
+}
+
+
+
+.wrapNewSlider img {
+    max-width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+
+
+
